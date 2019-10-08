@@ -8,8 +8,6 @@ class Question < ApplicationRecord
   is_impressionable
   has_many :likes, dependent: :destroy
 
-  def like?(user)
-    likes.include?(user)
-  end
+
 
 end
