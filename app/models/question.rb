@@ -9,7 +9,7 @@ class Question < ApplicationRecord
   has_many :likes, dependent: :destroy
 
   def like?(user)
-    like_users.include?(user)
+    likes.include?(user)
   end
 
 end
