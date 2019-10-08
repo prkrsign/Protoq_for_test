@@ -1,0 +1,199 @@
+html {
+  min-height: 100%;
+  background-color: #fff;
+  color: $dark_grey;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+body {
+  margin-bottom: 150px;
+}
+
+.navbar.main_header {
+  height: 50px;
+}
+
+a {
+  color: $link_blue;
+  list-style: none;
+  text-decoration: none;
+  display: block;
+}
+
+p {
+  color: $dark_grey;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+h2{
+  margin: 0;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.field_with_errors{
+  margin-top: $space_associated;
+  ul li:first-child {
+    border-top: solid 1px $accent_orange;
+    border-top-left-radius: $base_border_radius;
+    border-top-right-radius: $base_border_radius;
+  }
+  ul li {
+    background-color: $background_orange;
+    color: $accent_orange;
+    font-size: $small_text;
+    padding: $space_associated 0 0 $space_associated;
+    border-left: 1px solid $accent_orange;
+    border-right: 1px solid $accent_orange;
+  }
+  li:last-child {
+    border-bottom: solid 1px $accent_orange;
+    padding-bottom: $space_associated;
+    border-bottom-right-radius: $base_border_radius;
+    border-bottom-left-radius: $base_border_radius;
+  }
+}
+
+.flash_message {
+  p {
+    font-size: $small_text;
+    color: $dark_grey;
+    line-height: 45px;
+    padding-left: $space_associated;
+    background-color: $background_grey;
+    border-radius: $base_border_radius;
+  }
+}
+
+ul li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+}
+
+.user_post_containter {
+  padding: 0 $space_associated;
+  position: relative;
+}
+
+.page_header {
+  padding: $space_unassociated 0 0;
+  border-bottom: 1px solid $border_grey;
+  .category_tag_for_queston {
+    font-size: $minimum_text;
+  }
+  h1 {
+    color: #333;
+    font-size: $heading_text;
+    margin-bottom: 5px;
+  }
+  p {
+    font-size: $small_text;
+    margin-bottom: 30px;
+  }
+}
+
+.page_footer {
+  padding: 60px 0;
+}
+
+.pagination {
+  margin-top: $space_unassociated;
+  height: 50px;
+  a {
+    padding: 5px 5px;
+    color: $link_blue;
+    font-weight: bold;
+  }
+  span {
+    float: left;
+    line-height: 1;
+  }
+  span.current {
+    padding: 5px;
+  }
+  .translation_missing {
+    color: $link_blue;
+    font-weight: normal;
+  }
+}
+
+.pagination {
+}
+
+.page_footer_link {
+  margin-top: 9px;
+  font-size: $small_text;
+}
+
+.form {
+  border-color: $border_grey;
+  border: 1px solid $border_grey;
+  border-radius: $base_border_radius;
+}
+
+::-webkit-input-placeholder {
+  font-size: $default_text;
+  line-height: 1;
+  padding-top: 5px;
+}
+
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none !important;
+  border-color: $main_green;
+  box-shadow: 0 0 5px $main_green;
+}
+
+textarea, div, p, input {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input {
+  padding-left: 10px;
+}
+
+::-webkit-input-placeholder {
+  font-size: $small_text;
+}
+::-moz-placeholder {
+  font-size: $small_text;
+}
+:-ms-input-placeholder {
+  font-size: $small_text;
+}
+:-moz-placeholder {
+  font-size: $small_text;
+}
+
+.small_input {
+  
+}
+
+.link {
+  color: $link_blue;
+  text-decoration: none;
+}
+
+#wrapper{
+  width: 1160px;
+  margin: 0 auto;
+}

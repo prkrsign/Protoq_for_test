@@ -1,0 +1,21 @@
+= nested_form_for (question) do |f|
+  - if @question.errors.any?
+    .field_with_errors
+      %ul
+        - @question.errors.full_messages.each do |msg|
+          %li= msg
+  %p.user_post_label カテゴリ
+  = f.collection_select :category_id, Category.all, :id, :title, prompt: "カテゴリー選択", class: "category_choise btn btn_white"
+  %p.user_post_label タイトル
+  = f.text_area :title, placeholder: "タイトル", cols: "180", class: "form user_post_title"
+  = f.fields_for :question_contents do |qc|
+    .markdown_header.clearfix
+      %p.post_question_headline.user_post_label.js_question_index 回答
+      %p.user_post_label_sub 質問内容
+      %p.user_post_label_sub 質問プレビュー
+    .form
+      .clearfix
+        = qc.text_area :content, class: "js-questionForm user_post_content", placeholder: "マークダウンで問題の内容を記入してください", cols: "100", rows: "40"
+        .preview-form.user_post_preview.question_content.js-preview
+  .page_footer
+    = submit_tag "#{button_word}", class: "btn btn_primary user_posting_btn"

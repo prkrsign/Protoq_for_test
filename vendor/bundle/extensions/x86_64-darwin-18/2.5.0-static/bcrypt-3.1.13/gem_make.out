@@ -1,0 +1,19 @@
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/bcrypt-3.1.13/ext/mri
+/Users/kouyamaakira/.rbenv/versions/2.5.1/bin/ruby -I /Users/kouyamaakira/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191008-4516-1h4bepp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+compiling crypt_blowfish.c
+clang  -D__SKIP_GNU -I/Users/kouyamaakira/.rbenv/versions/2.5.1/include -I/usr/local/opt/openssl/include -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -c -o x86.o x86.S
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/bcrypt-3.1.13/ext/mri
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20191008-4516-54yxq3

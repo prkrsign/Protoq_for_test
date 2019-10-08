@@ -1,0 +1,9 @@
+.each_answer
+  = raw(answer_content.rendered_content)
+  .AnswerBox__relations
+    .BoxItems
+      %a
+        = image_tag "#{answer_content.user.image}", width: 16, height: 16
+      %span.BoxItems__userName
+        %a{:href => "#"}= answer_content.user.name
+      %span.BoxItems__textUpdate= time_ago_in_words(answer_content.created_at)+"前"

@@ -1,0 +1,123 @@
+.answer_content {
+  padding: 20px 0 0 20px;
+  p {
+    margin: 5px 0 5px 0;
+   line-height: 1.5;
+  }
+  .code-frame {
+    background-color: $markdown_background;
+    border-radius: $base_border_radius;
+    .highlight {
+      pre {
+        line-height: 1.5;
+        overflow: scroll;
+        margin-top: 6px;
+        color: $bright_grey;
+        .c1, .cm, .err, cs, .cp {
+          color: $bright_grey;
+        }
+        .cp {
+          color: #FFF;
+        }
+      }
+    }
+    .code-lang {
+      height: 18px;
+    }
+    span.bold {
+      font-size: $small_text;
+      padding: 6px;
+      color: $markdown_background;
+      background-color: $border_grey;
+      border-radius: $base_border_radius 0 0 0;
+    }
+  }
+  h1 {
+    font-size: $heading_text;
+    margin: 5px 0 0 0
+    ;
+    padding-left: 10px;
+    border-left: 3px solid $main_green;
+  }
+  .fa-link {
+    display: none;
+  }
+  h2 {
+    font-size: $heading_text;
+    font-weight: bold;
+    padding: 20px 0 10px;
+  }
+  img {
+    max-width: 100%;
+    max-height: 700px;
+  }
+  strong {
+    font-weight: bold;
+  }
+  ul li {
+    list-style-type: circle;
+    margin-left: $space_unassociated;
+    line-height: 30px;
+  }
+  ul li ul li {
+    list-style-type: square;
+  }
+  ol li {
+    margin-left: $space_unassociated;
+    list-style-type: decimal;
+    line-height: 30px;
+  }
+  ol li ol li {
+    list-style-type: lower-roman;
+  }
+  table {
+    border: 1px solid $border_grey;
+    border-radius: $base_border_radius;
+    td {
+      padding: 5px 15px;
+      text-align: left;
+      &:nth-child(odd) {
+        border-right: 1px solid $border_grey;
+      }
+    }
+    th {
+      background-color: $background_grey;
+      padding: 10px 15px;
+      text-align: left;
+      &:nth-child(1) {
+        border-right: 1px solid $border_grey;
+      }
+    }
+  }
+}
+
+.answers__header{
+  margin: 60px 0 0 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.AnswerBox{
+  &__relations{
+    display: flex;
+    justify-content: flex-end;
+    margin: 60px 0 0 0;
+  }
+}
+
+
+
+.each_answer{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: $space_unassociated;
+  padding: 0 0 20px 0;
+  overflow: scroll;
+}
+
+.BoxItems{
+  display: flex;
+  padding: 0;
+  &__userName{
+    margin: 0 $space-unit 0 0;
+  }
+}

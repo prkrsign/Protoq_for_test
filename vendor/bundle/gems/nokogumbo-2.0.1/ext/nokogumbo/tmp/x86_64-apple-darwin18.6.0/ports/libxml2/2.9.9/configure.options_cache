@@ -1,0 +1,1 @@
+["--host=x86_64-apple-darwin18.6.0", "--enable-static", "--disable-shared", "--without-python", "--without-readline", "--with-c14n", "--with-debug", "--with-threads", "--prefix=/Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/nokogumbo-2.0.1/ext/nokogumbo/ports/x86_64-apple-darwin18.6.0/libxml2/2.9.9"]

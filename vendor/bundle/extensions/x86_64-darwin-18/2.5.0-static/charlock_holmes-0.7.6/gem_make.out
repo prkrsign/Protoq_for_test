@@ -1,0 +1,41 @@
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/charlock_holmes-0.7.6/ext/charlock_holmes
+/Users/kouyamaakira/.rbenv/versions/2.5.1/bin/ruby -I /Users/kouyamaakira/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191008-4516-lqs2vm.rb extconf.rb
+checking for -licui18n... no
+checking for -licui18n... yes
+checking for unicode/ucnv.h... yes
+checking for -lz... yes
+checking for -licuuc... yes
+checking for -licudata... yes
+creating Makefile
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/charlock_holmes-0.7.6/ext/charlock_holmes
+make "DESTDIR=" clean
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/charlock_holmes-0.7.6/ext/charlock_holmes
+make "DESTDIR="
+compiling converter.c
+compiling encoding_detector.c
+compiling ext.c
+compiling transliterator.cpp
+In file included from transliterator.cpp:1:
+In file included from ./common.h:9:
+In file included from /Users/kouyamaakira/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby.h:33:
+In file included from /Users/kouyamaakira/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/ruby.h:2040:
+/Users/kouyamaakira/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/intern.h:47:19: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                  ^~~~~~~~~
+/Users/kouyamaakira/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/intern.h:47:36: warning: 'register' storage class specifier is deprecated and incompatible with C++17 [-Wdeprecated-register]
+void rb_mem_clear(register VALUE*, register long);
+                                   ^~~~~~~~~
+transliterator.cpp:101:70: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  trans = icu::Transliterator::createInstance(icu::UnicodeString(id, id_len), UTRANS_FORWARD, p_error, status);
+                                              ~~~                    ^~~~~~
+transliterator.cpp:106:39: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned long') to 'int32_t' (aka 'int') [-Wshorten-64-to-32]
+  u_txt = new icu::UnicodeString(txt, txt_len);
+              ~~~                     ^~~~~~~
+4 warnings generated.
+linking shared-object charlock_holmes/charlock_holmes.bundle
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/charlock_holmes-0.7.6/ext/charlock_holmes
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 charlock_holmes.bundle ./.gem.20191008-4516-haerwi/charlock_holmes

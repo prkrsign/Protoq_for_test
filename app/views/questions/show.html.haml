@@ -1,0 +1,52 @@
+.show-content
+  .question_header
+    .QuestionBox__userInfo
+      .BoxItems
+        %a
+          = image_tag "#{@question.user.image}", width: 16, height: 16
+        %span.BoxItems__userName
+          %a{:href => "#"}= @question.user.name
+        = succeed "\u306B\u6295\u7A3F" do
+          %span.BoxItems__textUpdate= time_ago_in_words(@question.created_at)+"前"
+    %h1= @question.title
+    %ul.QuestionBox__tags
+      %li.QuestionBox__tag
+        = @question.category.title
+  .question_content
+    = render partial: 'markdown_content', collection: @question.question_contents, locals: { title: "質問" }
+  - if @question.answers.exists?
+    %p.answers__header
+      回答
+      %span>= @question.answers.count
+      件
+    .answer_content
+      = render partial: 'answers/answer_content', collection: @question.answers, locals: { title: "回答" }
+  - else
+    .page_footer
+      %p 解答がまだありません
+  - if user_signed_in?
+    - @answer = @question.answers.build
+    = form_for([@question, @answer]) do |f|
+      - if @answer.errors.any?
+        .field_with_errors
+          %ul
+            - @answer.errors.full_messages.each do |msg|
+              %li= msg
+      .markdown_header.clearfix
+        %p.post_question_headline.user_post_label.js_question_index あなたの回答
+        %p.user_post_label_sub 回答内容
+        %p.user_post_label_sub 回答プレビュー
+      .form
+        .clearfix
+          = f.text_area :content, class: "js-questionForm user_post_content", placeholder: "マークダウンで回答を記入してください", cols: "100", rows: "40"
+          .preview-form.user_post_preview.question_content.js-preview
+      .page_footer
+        = submit_tag "回答する", class: "btn btn_primary user_posting_btn"
+  - else
+    .page_footer
+      %p
+        = link_to 'ログインして回答する', new_user_session_path, class: "Menu__item"
+:javascript
+  $(function(){
+    new window.Editor($(".js-questionForm"), $(".js-preview"))
+  })

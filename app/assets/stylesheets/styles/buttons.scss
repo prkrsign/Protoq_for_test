@@ -1,0 +1,28 @@
+.btn{
+  font-size: $small_text;
+  display:block;
+  padding: 10px 0;
+  text-align:center;
+  line-height: 1;
+  border-radius: $base_border_radius;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn_primary {
+  background: $main_green;
+  color: #FFF;
+  border: 1px solid $main_green;
+}
+
+.btn_white {
+  color: $main_green;
+  border: 1px solid $main_green;
+}
+
+.btn_grey {
+  color: $dark_grey;
+  border: 1px solid $border_grey;
+  background-color: #FFF;
+}

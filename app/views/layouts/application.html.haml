@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ProtoQ
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    %script{:crossorigin => "anonymous", :integrity => "sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=", :src => "https://code.jquery.com/jquery-3.3.1.min.js"}
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header.Header
+      .Header__container
+        .Header__head
+          %h1
+            %a{:href => "/"} ProtoQ
+        %nav.Header__body
+          %ul.Menu
+            - if user_signed_in?
+              %li.Menu__item
+                = image_tag "https://i.imgur.com/Ubz2tox.png", class: "Menu__item-img"
+              %li.Menu__item
+                %a{:href => "/questions/new"} 質問を投稿する
+              %li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "Menu__item"
+            - else
+              .grid-6.signin_nav
+                %li= link_to 'ログイン', new_user_session_path, class: "Menu__item"
+              .grid-6.signin_nav
+                %li= link_to '新規登録', new_user_registration_path, class: "Menu__item"
+    .l-column
+      = yield

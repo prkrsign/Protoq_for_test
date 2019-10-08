@@ -1,0 +1,15 @@
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/websocket-driver-0.7.1/ext/websocket-driver
+/Users/kouyamaakira/.rbenv/versions/2.5.1/bin/ruby -I /Users/kouyamaakira/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20191008-4516-1lmed2e.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/kouyamaakira/projects/Protoq_for_test/vendor/bundle/gems/websocket-driver-0.7.1/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.bundle ./.gem.20191008-4516-mwbdm9

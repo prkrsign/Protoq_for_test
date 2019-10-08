@@ -1,0 +1,17 @@
+.user_post_header
+  %h3 質問作成
+= render partial: 'post_question', locals: { question: @question, button_word: "投稿する" }
+:javascript
+  $(function(){
+    new window.Editor($(".js-questionForm"), $(".js-preview"))
+    new window.Editor($(".js-introductionForm"), $(".js-introductionPreview"))
+
+    var currentFormNum = 1
+    $(document).on('click', '.js_add_btn', function() {
+      var questionIndex = $('.js_question_index')
+      $(questionIndex).last().text("問題 " + (currentFormNum + 1))
+      new window.Editor($(questionIndex).last().parents('.fields').find("textarea"), $(questionIndex).last().parents('.fields').find(".preview-form"))
+
+      currentFormNum++;
+    })
+  })

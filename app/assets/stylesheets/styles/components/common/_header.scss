@@ -1,0 +1,28 @@
+.Header{
+  background-color: white;
+  position: sticky;
+  top: 0px;
+  margin: 0 0 30px 0;
+  &__container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: left;
+    height: 98px;
+    flex: 0 1 $base-content-width;
+    max-width: $base-content-width;
+    margin: 0 auto;
+    padding: 0 $space-unit;
+  }
+  &__head {
+    flex: 1 1 auto;
+    h1 {
+      margin: 15px 0 0 0;
+    }
+  }
+  &__keyText{
+    margin: 5px 0 0 0;
+  }
+  &__body {
+    flex: 3 1 auto;
+  }
+}
