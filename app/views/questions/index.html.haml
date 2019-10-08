@@ -1,6 +1,6 @@
 .index-wrapper
 
--@questions.each do |question| 
+-@questions.includes(:likes).each do |question| 
   .index-wrapper__main-contents
     .index-wrapper__main-contents__header
       .index-wrapper__main-contents__header__status
@@ -19,7 +19,6 @@
     .index-wrapper__main-contents__under
       .index-wrapper__main-contents__under__PV-box
         -# -binding.pry
-
         -if question.likes.first.nil?
           .index-wrapper__main-contents__under__PV-box__icon
             %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.none-active-color{data:{id: question.id}}
@@ -32,8 +31,9 @@
           .index-wrapper__main-contents__under__PV-box__icon
             %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.none-active-color{data:{id: question.id}}
 
-        .index-wrapper__main-contents__under__PV-box__value
-          10
+            -# -binding.pry
+        .index-wrapper__main-contents__under__PV-box__value.count{data:{id: question.id}}
+          = question.likes.count
         .index-wrapper__main-contents__under__PV-box__PV
           PV
         
