@@ -5,7 +5,7 @@
     &__main-contents{
         &__header{
             font-family: "San Francisco";
-            padding-top: 20px;
+            padding-top: 12px;
             &__status{
                 display: inline-block;
                 height: 20px;
@@ -53,8 +53,42 @@
                 background-color: #ADD8E6;
                 border-radius: 5px;
                 vertical-align: top;
-                
+            }
+        }
+        &__under{
+            font-family: "San Francisco";
+            width: 920px;
+            border-bottom: 1px solid  #ccc;
 
+            &__PV-box{
+                margin: 6px 0 12px 0;
+                &__icon{
+                    display: inline-block;
+                    padding-left:70px;
+                }
+                &__value{
+                    display: inline-block;
+                    margin-left:5px;
+                    letter-spacing: 10px
+                }
+                &__PV{
+                    display: inline-block;
+                }
+                &__info-box{
+                    float: right;
+                    &__name{
+                        display: inline-block;
+                        color:   #32577d;
+                        font-weight: bold;
+                        margin-right: 20px;
+                    }
+                    &__time{
+                        display: inline-block;
+                        font-weight: bold;
+                        margin-right: 8px;
+                        color: #666666;
+                    }
+                }
             }
         }
     }
