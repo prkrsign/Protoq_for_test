@@ -54,9 +54,8 @@ ActiveRecord::Schema.define(version: 2019_10_08_074857) do
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "to_user_id", null: false
-    t.bigint "from_user_id", null: false
-    t.integer "status", null: false
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

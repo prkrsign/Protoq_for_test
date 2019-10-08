@@ -18,8 +18,14 @@
     
     .index-wrapper__main-contents__under
       .index-wrapper__main-contents__under__PV-box
-        .index-wrapper__main-contents__under__PV-box__icon
-          %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart#heart.none-active-color
+        -# -binding.pry
+        -unless question.like?(current_user)
+          =link_to '#', class: 'index-wrapper__main-contents__under__PV-box__icon' do
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart#heart.none-active-color
+        -else
+          =link_to '#', class: 'index-wrapper__main-contents__under__PV-box__icon' do
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart#heart.active-color
+
         .index-wrapper__main-contents__under__PV-box__value
           10
         .index-wrapper__main-contents__under__PV-box__PV

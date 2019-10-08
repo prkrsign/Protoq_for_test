@@ -1,8 +1,19 @@
 class LikesController < ApplicationController
     def create
-        @like = Like.find_or_initialize_by(to_user_id: params[:user_id], from_user_id: current_user.id)
-        reaction.update_attributes(
-            status: params[:reaction]
-        )
+        @question = Question.find(params[:question_id])
+        @like = current_user.likes.find_by(question: @question)
+        toggle
     end
+
+
+    private 
+    def toggle
+        if @like
+          return head :unprocessable_entity unless @like.destroy
+        else
+          @like = current_user.likes.build(question: @question))
+          return head :unprocessable_entity unless @like.save
+        end
+        head :ok
+      end
 end
