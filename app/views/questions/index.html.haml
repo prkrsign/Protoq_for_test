@@ -21,10 +21,10 @@
         -# -binding.pry
         -unless question.like?(current_user)
           =link_to '#', class: 'index-wrapper__main-contents__under__PV-box__icon' do
-            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart#heart.none-active-color{data:{id: question.id}}
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.none-active-color{data:{id: question.id}}
         -else
           =link_to '#', class: 'index-wrapper__main-contents__under__PV-box__icon' do
-            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart#heart.active-color{data:{id: question.id}}
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.active-color{data:{id: question.id}}
 
         .index-wrapper__main-contents__under__PV-box__value
           10
