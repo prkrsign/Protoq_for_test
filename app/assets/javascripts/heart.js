@@ -18,15 +18,14 @@ $(document).on('turbolinks:load', function(){
           })
           // 処理が上手く行ったらボタンを切り替えて
           .done((data) => {
-              console.log(data)
-              console.log($(this))
-              $(this).removeClass('none-active-color').addClass('active-color')
-            // if ($(this).text() === 'いいね！') {
-            //   $(this).text('いいね！を取り消す').removeClass('btn-primary').addClass('btn-secondary');
-            // } 
-            // else if ($(this).text() === 'いいね！を取り消す') {
-            //   $(this).text('いいね！').removeClass('btn-secondary').addClass('btn-primary');
-            // }
+              value = $(this).attr('class')
+              element = value.match('active-color|none-active-color');
+              if (element[0] === 'active-color' ){
+                $(this).removeClass('active-color').addClass('none-active-color')
+              }
+              else if (element[0] === 'none-active-color'){
+                $(this).removeClass('none-active-color').addClass('active-color')
+              }
           })
           // 処理が上手く行かなかったら失敗の旨を伝えるアラートを表示
           .fail((data) => {
