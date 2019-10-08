@@ -18,8 +18,20 @@
     
     .index-wrapper__main-contents__under
       .index-wrapper__main-contents__under__PV-box
-        .index-wrapper__main-contents__under__PV-box__icon
-          %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart
+        -# -binding.pry
+
+        -if question.likes.first.nil?
+          .index-wrapper__main-contents__under__PV-box__icon
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.none-active-color{data:{id: question.id}}
+
+        -elsif question.likes.first.user_id == current_user.id
+          .index-wrapper__main-contents__under__PV-box__icon
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.active-color{data:{id: question.id}}
+        
+        -else
+          .index-wrapper__main-contents__under__PV-box__icon
+            %i.fa.fa-heart.index-wrapper__main-contents__under__PV-box__icon__heart.heart.none-active-color{data:{id: question.id}}
+
         .index-wrapper__main-contents__under__PV-box__value
           10
         .index-wrapper__main-contents__under__PV-box__PV

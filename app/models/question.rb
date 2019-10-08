@@ -6,4 +6,8 @@ class Question < ApplicationRecord
   validates :title, :category_id, presence: true
   accepts_nested_attributes_for :question_contents, allow_destroy: true
   is_impressionable
+  has_many :likes, dependent: :destroy
+
+
+
 end
