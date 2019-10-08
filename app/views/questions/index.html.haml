@@ -1,12 +1,12 @@
 .index-wrapper
 
--(0..5).each do |i| 
+-@questions.each do |question| 
   .index-wrapper__main-contents
     .index-wrapper__main-contents__header
       .index-wrapper__main-contents__header__status
         受付中
       .index-wrapper__main-contents__header__title
-        bulletで警告されるN+1問題が解決できない
+        =question.title
     
     .index-wrapper__main-contents__middle
       .index-wrapper__main-contents__middle__answer
@@ -14,7 +14,7 @@
         .index-wrapper__main-contents__middle__answer__count
           0
       .index-wrapper__main-contents__middle__tag
-        RubyonRails
+        =question.category.title
     
     .index-wrapper__main-contents__under
       .index-wrapper__main-contents__under__PV-box
@@ -27,6 +27,6 @@
         
         .index-wrapper__main-contents__under__PV-box__info-box
           .index-wrapper__main-contents__under__PV-box__info-box__name
-            aaa
-          .index-wrapper__main-contents__under__PV-box__info-box__time
-            4分前
+            = question.user.name
+          %time.index-wrapper__main-contents__under__PV-box__info-box__time(datetime="#{question.created_at}")
+            = time_ago_in_words(question.created_at)
