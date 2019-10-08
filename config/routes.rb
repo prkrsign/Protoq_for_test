@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   end
   resources :markdown_previews, only: :create
   resources :markdown_attachments, only: :create
+  resources :likes, only: %i(create)
 end
