@@ -18,10 +18,14 @@ $(document).on('turbolinks:load', function(){
           })
           // 処理が上手く行ったらボタンを切り替えて
           .done((data) => {
+              id = $(this).attr('data-id')
               value = $(this).attr('class')
               element = value.match('active-color|none-active-color');
+              console.log($('.count'))
+              
               if (element[0] === 'active-color' ){
                 $(this).removeClass('active-color').addClass('none-active-color')
+                $("[data-id={$id}]").css("color","red")
               }
               else if (element[0] === 'none-active-color'){
                 $(this).removeClass('none-active-color').addClass('active-color')
